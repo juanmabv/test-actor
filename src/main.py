@@ -21,13 +21,6 @@ async def main():
             Actor.log.info('No start URLs specified in actor input, exiting...')
             await Actor.exit()
 
-        # Enqueue the starting URLs in the default request queue
-        default_queue = await Actor.open_request_queue()
-        for start_url in start_urls:
-            url = start_url.get('url')
-            Actor.log.info(f'Enqueuing {url} ...')
-            await default_queue.add_request({ 'url': url, 'userData': { 'depth': 0 }})
-
         # Launch a new Selenium Chrome WebDriver
         Actor.log.info('Launching Chrome WebDriver...')
         chrome_options = ChromeOptions()
@@ -40,12 +33,12 @@ async def main():
         try:
             # Open the URL in the Selenium WebDriver
             driver.get(url)
+            url = 'prueba_url'
+            title = 3
             print('hola')
             print('hola2')
             await Actor.push_data({ 'url': url, 'title': title })
         except:
             Actor.log.exception(f'Cannot extract data from {url}.')
-        finally:
-            await default_queue.mark_request_as_handled(request)
 
         driver.quit()
