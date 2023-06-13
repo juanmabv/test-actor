@@ -50,6 +50,7 @@ async def main():
                 # Open the URL in the Selenium WebDriver
                 driver.get(url)
                 print('hola')
+                print('hola2')
 
                 # If we haven't reached the max depth,
                 # look for nested links and enqueue their targets
