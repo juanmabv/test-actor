@@ -37,16 +37,17 @@ async def main():
             print(type(actor_input))
             url_texto = start_urls[0]['url']
             driver.get(url_texto)
+
             url = url_texto
+
             title = 3
 
-            lista_title = [title, 4]
+            title2 = 4
 
             url2 = 'url'
 
-            lista_url = [url_texto, url2]
-
-            await Actor.push_data({'url': lista_url, 'title': lista_title})
+            await Actor.push_data({'url': url, 'title': title})
+            await Actor.push_data({'url': url2, 'title': title2})
         except:
             Actor.log.exception(f'Cannot extract data from {url}.')
 
