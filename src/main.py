@@ -18,7 +18,8 @@ async def main():
         max_depth = actor_input.get('max_depth')
 
         if not start_urls:
-            Actor.log.info('No start URLs specified in actor input, exiting...')
+            Actor.log.info(
+                'No start URLs specified in actor input, exiting...')
             await Actor.exit()
 
         # Launch a new Selenium Chrome WebDriver
@@ -29,18 +30,23 @@ async def main():
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         driver = webdriver.Chrome(options=chrome_options)
-        
+
         try:
             # Open the URL in the Selenium WebDriver
             print(actor_input)
             print(type(actor_input))
             url_texto = start_urls[0]['url']
             driver.get(url_texto)
-            url = 'url_texto'
+            url = url_texto
             title = 3
-            print('hola')
-            print('hola2')
-            await Actor.push_data({ 'url': url, 'title': title })
+
+            lista_title = [title, 4]
+
+            url2 = 'url'
+
+            lista_url = [url_texto, url2]
+
+            await Actor.push_data({'url': lista_url, 'title': lista_title})
         except:
             Actor.log.exception(f'Cannot extract data from {url}.')
 

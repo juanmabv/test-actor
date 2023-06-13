@@ -19,7 +19,8 @@
                     "transformation": {
                         "fields": [
                             "url",
-                            "title"
+                            "title",
+                            "prueba"
                         ]
                     },
                     "display": {
@@ -31,6 +32,10 @@
                             },
                             "title": {
                                 "label": "Title",
+                                "format": "text"
+                            },
+                            "prueba": {
+                                "label": "label_prueba",
                                 "format": "text"
                             }
                         }
