@@ -38,6 +38,8 @@ async def main():
             print(type(actor_input))
             url_texto = start_urls[0]['url']
             driver.get(url_texto)
+            texto_boton = driver.find_element(
+                By.CSS_SELECTOR, "body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b").get_attribute('innerText')
 
             url = url_texto
 
@@ -48,7 +50,7 @@ async def main():
             url2 = 'url'
 
             await Actor.push_data({'url': url, 'title': title, 'prueba': prueba_input})
-            await Actor.push_data({'url': url2, 'title': title2})
+            await Actor.push_data({'url': url2, 'title': title2, 'prueba': texto_boton})
         except:
             Actor.log.exception(f'Cannot extract data from {url}.')
 
