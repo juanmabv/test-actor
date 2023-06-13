@@ -17,6 +17,12 @@
             "type": "integer",
             "description": "Depth to which to scrape to",
             "default": 1
+        },
+        "prueba_input": {
+            "title": "Input de prueba",
+            "type": "text",
+            "description": "descripción de prueba",
+            "default": "jiji"
         }
     },
     "required": ["start_urls"]

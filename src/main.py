@@ -16,6 +16,7 @@ async def main():
         actor_input = await Actor.get_input() or {}
         start_urls = actor_input.get('start_urls')
         max_depth = actor_input.get('max_depth')
+        prueba_input = actor_input.get('prueba_input')
 
         if not start_urls:
             Actor.log.info(
