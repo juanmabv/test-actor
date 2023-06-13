@@ -20,7 +20,7 @@
         },
         "prueba_input": {
             "title": "Input de prueba",
-            "type": "text",
+            "type": "string",
             "description": "descripción de prueba",
             "default": "jiji"
         }
