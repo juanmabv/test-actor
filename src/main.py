@@ -47,7 +47,7 @@ async def main():
 
             url2 = 'url'
 
-            await Actor.push_data({'url': url, 'title': title})
+            await Actor.push_data({'url': url, 'title': title, 'prueba': prueba_input})
             await Actor.push_data({'url': url2, 'title': title2})
         except:
             Actor.log.exception(f'Cannot extract data from {url}.')
