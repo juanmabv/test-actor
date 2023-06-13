@@ -22,7 +22,8 @@
             "title": "Input de prueba",
             "type": "string",
             "description": "descripción de prueba",
-            "default": "jiji"
+            "default": "jiji",
+            "editor": "textfield"
         }
     },
     "required": ["start_urls"]
