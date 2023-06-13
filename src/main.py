@@ -32,8 +32,13 @@ async def main():
         
         try:
             # Open the URL in the Selenium WebDriver
+            print(actor_input)
+            print(type(actor_input))
             print(start_urls)
             print(type(start_urls))
+            prueba_url = start_urls[0]['url']
+            print(prueba_url)
+            print(type(prueba_url))
             url = 'prueba_url'
             title = 3
             print('hola')
