@@ -39,8 +39,9 @@ async def main():
             url_texto = start_urls[0]['url']
             driver.get(url_texto)
             texto_boton = driver.find_elements(
-                By.CSS_SELECTOR, "body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b")[0].get_attribute('innerText')
-            print(texto_boton)
+                By.CSS_SELECTOR, "body > div.L3eUgb > div.o3j99.ikrT4e.om7nvf > form > div:nth-child(1) > div.A8SBwf > div.FPdoLc.lJ9FBc > center > input.gNO89b")
+            print(f'texto botón: {texto_boton}')
+            print(type(texto_boton))
             url = url_texto
 
             title = 3
