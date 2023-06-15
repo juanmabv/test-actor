@@ -26,16 +26,32 @@
                     "display": {
                         "component": "table",
                         "properties": {
-                            "url": {
-                                "label": "URL",
+                            "booleano": {
+                                "label": "label_booleano",
                                 "format": "text"
                             },
-                            "title": {
-                                "label": "Title",
+                            "texto": {
+                                "label": "label_texto",
                                 "format": "text"
                             },
-                            "prueba": {
-                                "label": "label_prueba",
+                            "entero": {
+                                "label": "label_entero",
+                                "format": "text"
+                            },
+                            "decimal": {
+                                "label": "label_decimal",
+                                "format": "text"
+                            },
+                            "fecha": {
+                                "label": "label_fecha",
+                                "format": "text"
+                            },
+                            "hora": {
+                                "label": "label_hora",
+                                "format": "text"
+                            },
+                            "fecha_hora": {
+                                "label": "label_fecha_hora",
                                 "format": "text"
                             }
                         }

@@ -4,6 +4,7 @@ from apify import Actor
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.common.by import By
+import pandas as pd
 
 # To run this Actor locally, you need to have the Selenium Chromedriver installed.
 # https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/
@@ -33,23 +34,21 @@ async def main():
         driver = webdriver.Chrome(options=chrome_options)
 
         try:
-            # Open the URL in the Selenium WebDriver
-            print(actor_input)
-            print(type(actor_input))
-            url_texto = start_urls[0]['url']
-            driver.get(url_texto)
-            texto_boton = driver.find_element(
-                By.CSS_SELECTOR, "#gb > div > div:nth-child(1) > div > div:nth-child(1) > a").get_attribute('innerText')
-            url = url_texto
+            data = {
+                'booleano': [True, False, False, True, True, False, False, True, False, False, True, False, True, False, True],
+                'texto': ['Hola', 'Mundo', 'Python', 'Data', 'Science', 'OpenAI', 'ChatGPT', 'Pandas', 'DataFrame', 'Ejemplo', 'Columna', 'Número', 'Fecha', 'Hora', 'Datetime'],
+                'entero': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                'decimal': [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9, 10.0, 11.1, 12.2, 13.3, 14.4, 15.5],
+                'fecha': pd.date_range('2023-01-01', periods=15),
+                'hora': pd.date_range('00:00:00', periods=15, freq='H'),
+                'fecha_hora': pd.date_range('2023-01-01 00:00:00', periods=15, freq='H')
+            }
 
-            title = 3
+            df = pd.DataFrame(data)
 
-            title2 = 4
-
-            url2 = 'url'
-
-            await Actor.push_data({'url': url, 'title': title, 'prueba': prueba_input})
-            await Actor.push_data({'url': url2, 'title': title2, 'prueba': texto_boton})
+            for _, row in df.iterrows():
+                data_dict = row.to_dict()
+                await Actor.push_data(data_dict)
         except:
             Actor.log.exception(f'Cannot extract data from {url}.')
 
