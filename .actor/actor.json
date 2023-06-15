@@ -18,9 +18,9 @@
                     "title": "URLs and their titles",
                     "transformation": {
                         "fields": [
-                            "url",
-                            "title",
-                            "prueba"
+                            "fecha_hora",
+                            "texto",
+                            "entero"
                         ]
                     },
                     "display": {
