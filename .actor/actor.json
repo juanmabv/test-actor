@@ -18,40 +18,24 @@
                     "title": "URLs and their titles",
                     "transformation": {
                         "fields": [
-                            "fecha_hora",
-                            "texto",
-                            "entero"
+                            "enlace",
+                            "fecha",
+                            "titulo"
                         ]
                     },
                     "display": {
                         "component": "table",
                         "properties": {
-                            "booleano": {
-                                "label": "label_booleano",
-                                "format": "text"
-                            },
-                            "texto": {
-                                "label": "label_texto",
-                                "format": "text"
-                            },
-                            "entero": {
-                                "label": "label_entero",
-                                "format": "text"
-                            },
-                            "decimal": {
-                                "label": "label_decimal",
+                            "enlace": {
+                                "label": "label_enlace",
                                 "format": "text"
                             },
                             "fecha": {
                                 "label": "label_fecha",
                                 "format": "text"
                             },
-                            "hora": {
-                                "label": "label_hora",
-                                "format": "text"
-                            },
-                            "fecha_hora": {
-                                "label": "label_fecha_hora",
+                            "titulo": {
+                                "label": "label_titulo",
                                 "format": "text"
                             }
                         }
