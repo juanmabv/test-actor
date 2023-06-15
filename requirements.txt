@@ -3,3 +3,4 @@
 # for how to format them
 apify ~= 1.1.1
 selenium ~= 4.9.1
+pandas ~= 2.02
