@@ -27,15 +27,15 @@
                         "component": "table",
                         "properties": {
                             "enlace": {
-                                "label": "label_enlace",
+                                "label": "Enlace a la oferta",
                                 "format": "text"
                             },
                             "fecha": {
-                                "label": "label_fecha",
+                                "label": "Fecha de publicación",
                                 "format": "text"
                             },
                             "titulo": {
-                                "label": "label_titulo",
+                                "label": "Título de la oferta",
                                 "format": "text"
                             }
                         }

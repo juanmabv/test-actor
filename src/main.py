@@ -66,6 +66,7 @@ async def main():
                 lista_fecha = []
 
                 driver.get(url_sce)
+                pagina = 0
 
                 seguir = True
                 while seguir:
@@ -106,7 +107,6 @@ async def main():
                             time.sleep(tiempo_reposo)
                             tiempo_reposo += 10
 
-                    pagina = 1
                     print(f'página: {pagina}')
 
                     for oferta in lista_resultados:
@@ -145,7 +145,8 @@ async def main():
                     n_paginas = int(driver.find_element(By.CSS_SELECTOR, 'ul.ngx-pagination > li.ng-star-inserted:nth-child(7)')
                                     .get_attribute('innerText')
                                     .split('\n')[-1])
-                    print(n_paginas)
+                    pagina += 1
+                    print(f'Página {pagina} de {n_paginas}')
 
                     try:
                         boton_siguiente = driver.find_element(By.CSS_SELECTOR,
