@@ -34,6 +34,11 @@ async def main():
         driver = webdriver.Chrome(options=chrome_options)
 
         try:
+            driver.get(start_urls[0]['url'])
+            texto_boton = driver.find_element(
+                By.CSS_SELECTOR, "#gb > div > div:nth-child(1) > div > div:nth-child(1) > a").get_attribute('innerText')
+            print(f'Texto botón: {texto_boton}')
+
             data = {
                 'booleano': [True, False, False, True, True, False, False, True, False, False, True, False, True, False, True],
                 'texto': ['Hola', 'Mundo', 'Python', 'Data', 'Science', 'OpenAI', 'ChatGPT', 'Pandas', 'DataFrame', 'Ejemplo', 'Columna', 'Número', 'Fecha', 'Hora', 'Datetime'],
